@@ -4,19 +4,20 @@ import readline
 import shelve
 import sys
 
-assert sys.version_info >= (3, 5), 'You must use at least Python 3.5.'
-
-# Change directory to directory that includes play.py
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
-
 from src import parser
 from src import locations
 from src import classes
 from src import utils
 
+assert sys.version_info >= (3, 5), 'You must use at least Python 3.5.'
+
+# Change directory to directory that includes play.py
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 
 utils.clrscn()
 splash = classes.Splash("THE GAME")
+splash.splash()
 
 
 sfExists = False

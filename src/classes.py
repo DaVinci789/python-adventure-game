@@ -4,7 +4,7 @@ import shelve
 import sys
 
 from src import utils
-from src.modes import Mode
+from modes import Mode
 
 Creatures = []
 Items = []
@@ -17,7 +17,7 @@ class Splash(Mode):
     def __init__(self, title):
         self.title = title
 
-    def pStart(self):
+    def splash(self):
         print(self.title)
         print("This is the story of a certain development process\n"
               "It wasn't fun.\n")
