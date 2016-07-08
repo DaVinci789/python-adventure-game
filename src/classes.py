@@ -20,7 +20,7 @@ class Splash(Mode):
     def splash(self):
         print(self.title)
         print("This is the story of a certain development process\n"
-              "It wasn't fun.\n")
+              "It wasn't fun./s \n")
 
 
 class Player(object):
