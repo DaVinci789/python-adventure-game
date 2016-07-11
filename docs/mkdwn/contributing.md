@@ -17,7 +17,7 @@ Nevertheless, here's a quick run down.
 
 - When adding a change to a module, make sure to run the appropriate test.
 
-``` python
+```shell
 # Example
 $ python3 -m unittest src/tests/test_unittestname
 ```
