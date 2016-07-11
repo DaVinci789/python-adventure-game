@@ -14,3 +14,10 @@ Nevertheless, here's a quick run down.
 # Contributing
 
 - Pull requests are recommended, but patches are okay.
+
+- When adding a change to a module, make sure to run the appropriate test.
+
+``` python
+# Example
+$ python3 -m unittest src/tests/test_unittestname
+```
