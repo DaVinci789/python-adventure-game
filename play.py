@@ -8,6 +8,7 @@ from src import parser
 from src import locations
 from src import classes
 from src import utils
+from src import modes
 
 assert sys.version_info >= (3, 5), 'You must use at least Python 3.5.'
 
@@ -16,8 +17,6 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
 utils.clrscn()
-splash = classes.Splash("THE GAME")
-splash.splash()
 
 
 sfExists = False

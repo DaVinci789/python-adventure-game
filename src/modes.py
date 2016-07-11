@@ -37,7 +37,7 @@ class Timer(Mode):
         self.wait_for = wait_for
 
     def timer_wrap(self, func):
-        def inner():
+        def inner(*args, **kwargs):
             amount = self.amount
             while amount != -1:
                 func()

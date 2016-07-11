@@ -4,7 +4,7 @@ import shelve
 import sys
 
 from src import utils
-from modes import Mode
+from src.modes import Mode
 
 Creatures = []
 Items = []
@@ -123,7 +123,7 @@ class Player(object):
                     if not isinstance(i, InteractableItem):
                         takeItem(i)
                 # if len(self.location.items) > 1:
-                 #   takeItem(self.location.items[0])
+                #    takeItem(self.location.items[0])
             elif self.location.dark and not self.hasLight:
                 print('There\'s no way to tell if that is here because'
                       ' it is too dark.')
