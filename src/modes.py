@@ -36,16 +36,16 @@ class Timer(Mode):
         self.amount = amount
         self.wait_for = wait_for
 
-    def timer_wrap(self, func):
-        def inner(*args, **kwargs):
-            amount = self.amount
-            while amount != -1:
-                func()
-                amount = amount - 1
-                time.sleep(self.wait_for)
-        return inner
+        def timer_wrap(self, func):
+            def inner(*args, **kwargs):
+                amount = self.amount
+                while amount != -1:
+                    func()
+                    amount = amount - 1
+                    time.sleep(self.wait_for)
+                    return inner
 
-    def timer(self):
+                def timer(self):
         amount = self.amount
         while amount != -1:
             amount = amount - 1
@@ -73,3 +73,5 @@ class Cutscene(Mode):
                 print(self.description[i])
                 input(">>")
                 i += 1
+
+timer = modes.Timer(500, 1)

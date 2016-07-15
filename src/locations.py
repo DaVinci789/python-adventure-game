@@ -33,7 +33,7 @@ class Location(object):
     """
 
     def __init__(self, name, items, creatures, exits={},
-                 description='', showNameWhenExit=False, dark=False):
+                 description='', showNameWhenExit=False, dark=False, on_entry=None):
         # exit needs to be a dict with keys north, south, east, west,
         # up, down
         assert type(items) == list
@@ -50,6 +50,7 @@ class Location(object):
         self.exits = exits
         self.showNameWhenExit = showNameWhenExit
         self.dark = dark
+        self.on_entry = on_entry
 
     def giveInfo(self, fullInfo, light):
         assert self.description != '', 'There must be a description.'
@@ -88,6 +89,9 @@ class Location(object):
             for creature in self.creatures:
                 print('There is {0} {1} here.'.format(
                     utils.getIndefArticle(creature.name), creature.name))
+
+    def start(self):
+        self.on_entry()
 
 
 class BlackPit(Location):
@@ -208,7 +212,8 @@ forest.description = 'You are in a forest. There is a sign that says '\
 blackpit = BlackPit()
 dtn = DarkTunnel()
 dts = DarkTunnel()
-tunnelwinscription = Location('Inscription Room', [], [], showNameWhenExit=True)
+tunnelwinscription = Location(
+    'Inscription Room', [], [], showNameWhenExit=True)
 tunnelwinscription.description = 'You are at a dead end. This is inscr'\
                                  'ibed on the wall:\n"Here are the las'\
                                  't words of Joseph of Aramithea: The '\

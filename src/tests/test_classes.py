@@ -12,6 +12,10 @@ class TestItem(classes.Item):
 class CorrectArgsTest(unittest.TestCase):
 
     def test(self):
-        test = locations.Location(
-            "test", [], [], {}, "a test place", showNameWhenExit=True, dark=True)
-        self.assertTrue(test)
+        test_location = locations.Location(
+            "test_location", [], [], {}, "a test_location place", showNameWhenExit=True, dark=True)
+        test_player = classes.Player(
+            locations.Location_Storage, locations.start)
+        self.assertTrue(test_location)
+        self.assertTrue(TestItem())
+        self.assertTrue(test_player)
